@@ -24,12 +24,20 @@ body{
 
 /* common styles */
 img{
-    width: 100%;
+    /* width: 100%; */
+    width: fit-content;
 }
 
 a{
     text-decoration: none;
     color: white;
+}
+
+.description {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-color);
 }
 
 /* layouts */
@@ -38,8 +46,70 @@ a{
     width: 90%;
     margin: 0 auto;
     display: grid;
-    padding: 5rem;
-    background: #070707;
+    padding: 5rem;                                /* 5em means 5 times the size of current font*/
+    background: #070707;                        /* 5rem means 5*(relative font size of root element) */
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 4rem;                                     
+}
+@media only screen and (max-width:768px) {        /* if screen size is less thsn max width*/
+    .container{
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 3rem;
+        gap: 7rem;
+    }
+}
+
+.profile{
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+}
+
+/* profile */
+.profile_container{
+    display: flex;
+    gap: 2rem;
+}
+
+.profile_profileImg{
+    max-width: 250px;
+}
+
+.profile_name_fname{
+    color: white;
+    font-weight: 300;
+    font-size: clamp(2rem, 8vw, 4rem);             /*lowest size can be 2rem and highest size can be 4rem*/
+    text-transform: uppercase;                     /* 8vw means 8% of viewport width*/
+    display: block;                                /*It will act as Block element not Inline element*/
+    margin-bottom: -0.7rem;
+}
+
+.profile_name_lname{
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: clamp(2.5rem, 17vw, 7rem);
+    text-transform: uppercase;
+    display: block;
+}
+
+.profile_title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.downloadBtn{
+    display: block;
+    text-decoration: underline;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+.downloadBtn:hover{
+    color: var(--primary-color);
+}
+
+@media only screen and (max-width: 768px){
+    .profile_container{
+        flex-direction: column;
+    }
 }

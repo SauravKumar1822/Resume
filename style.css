@@ -91,7 +91,8 @@ a{
     margin-bottom: 2rem;
 }
 
-.group-1{
+.group-1,
+.group-2{
     display: flex;
     flex-direction: column;
     gap: 5rem;
@@ -171,4 +172,37 @@ a{
 /* certification */
 .certification_item{
     margin-top: 2rem;
+}
+
+/* experence */
+.exp_item{
+    margin-top: 2rem;
+}
+
+/* awards */
+.awards_item{
+    margin-top: 2rem;
+}
+
+/* Interests */
+.interest_items{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.interest_item{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+}
+
+.interest_item svg{
+    width: 2rem;
 }
